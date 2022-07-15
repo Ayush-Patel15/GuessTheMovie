@@ -8,7 +8,6 @@ import os
 load_dotenv()
 
 def get_movie_name():
-    api = os.environ.get("API_KEY")
     BASE_URL = "https://api.themoviedb.org/3/discover/movie"
     params_dict = {
         "api_key": os.environ.get("API_KEY"),
