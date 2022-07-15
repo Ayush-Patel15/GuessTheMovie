@@ -25,3 +25,8 @@ class HumanPlayer(Player):
 
 class ComputerPlayer(Player):
     pass
+
+
+if __name__ == "__main__":
+    obj = Player(name="Ayush")
+    print(obj.__str__())
