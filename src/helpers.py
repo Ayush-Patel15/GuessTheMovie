@@ -12,7 +12,7 @@ def movie_name_with_vowels():
             movie_name = movie_name + char + "  "
         else:
             movie_name = movie_name + "_" + "  "
-    print(movie)
+    # print(movie)
     return movie_name
 
 if __name__ == "__main__":
