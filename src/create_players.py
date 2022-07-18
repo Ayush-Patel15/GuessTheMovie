@@ -20,7 +20,10 @@ class Player(object):
         return "{0}, has ${1} /-".format(self.name, self.prize_money)
 
 class HumanPlayer(Player):
-    pass
+    
+    def human_get_move(self):
+        letter = input("Enter your guess: ").upper()
+        return letter
 
 
 class ComputerPlayer(Player):
@@ -28,5 +31,9 @@ class ComputerPlayer(Player):
 
 
 if __name__ == "__main__":
-    obj = Player(name="Ayush")
-    print(obj.__str__())
+    obj1 = Player(name="Ayush")
+    print(obj1.__str__())
+
+    # obj2 = HumanPlayer(name="Bittu")
+    # print(obj2.human_get_move())
+    # print(obj2.__str__())
