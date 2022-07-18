@@ -17,6 +17,15 @@ def filling_movie_name(movie, guessed=[]):
     return movie_name
 
 
+def movie_showboard(movie, guessed):
+    title = filling_movie_name(movie, guessed)
+    return """
+    ********************  GUESS  ********************\n
+    {0}\n
+    *************************************************
+    """.format(title)
+
+
 def number_of_players(min, max):
     n = input("Number of Players: ")
     try:
@@ -45,8 +54,9 @@ def player_move(player):
 if __name__ == "__main__":
     # "movie" should be in upper case letters.
     # print(filling_movie_name(get_movie_name()))
-    print(filling_movie_name("BLACK PANTHER-2",["B","N","R"]))
+    # print(filling_movie_name("BLACK PANTHER-2",["B","N","R"]))
     # print(number_of_players(0, 4))
     # obj = HumanPlayer("Ayush")
     # print(player_move(obj))
     # print(wheel_spin())
+    print(movie_showboard("BLACK PANTHER-2",["B","N","R"]))
