@@ -4,8 +4,9 @@ class Player(object):
 
     def __init__(self,name) -> None:
         self.name = name
-        self.prize_money = 0
+        self.prize_money = 500
         self.prizes_lst = []
+        self.prison_charge = 100
 
     def add_prize_money(self, amount):
         self.prize_money = self.prize_money + amount
@@ -13,8 +14,8 @@ class Player(object):
     def add_prize_lst(self,prize):
         self.prizes_lst.append(prize)
 
-    def bankrupt(self):
-        self.prize_money = 0
+    def prison(self):
+        self.prize_money = self.prize_money - self.prison_charge
 
     def __str__(self) -> str:
         return "{0}, has ${1} /-".format(self.name, self.prize_money)
