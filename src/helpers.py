@@ -38,9 +38,9 @@ def player_move(player):
     return guess
 
 
-def wheel_spin():
-    option = random.choice(["CASH","LOSETURN","PRISON"])
-    return option
+# def wheel_spin():
+#     option = random.choice(["CASH","LOSETURN","PRISON"])
+#     return option
 
 if __name__ == "__main__":
     # "movie" should be in upper case letters.
