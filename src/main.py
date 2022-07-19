@@ -1,4 +1,4 @@
-from helpers import filling_movie_name, movie_showboard, number_of_players, player_move, VOWELS, INTEGERS, SYMBOLS, ALPHABETS
+from helpers import filling_movie_name, movie_showboard, number_of_players, player_move, removing_spaces, VOWELS, INTEGERS, SYMBOLS, ALPHABETS
 from get_movie import get_movie_name
 from create_players import HumanPlayer
 
@@ -50,8 +50,8 @@ while True:
             print("Movie has {0} {1}.".format(count, guess))
             print(movie_showboard(movie=movie_name, guessed=guessed_letters))
 
-            ##N NOTE: ISSUE IN MATCHING MOVIE NAME
-            if filling_movie_name(movie=movie_name,guessed=guessed_letters) == movie_name:
+            movie_title = filling_movie_name(movie=movie_name,guessed=guessed_letters)
+            if removing_spaces(movie_title) == removing_spaces(movie_name):
                 winner = player
                 break
 

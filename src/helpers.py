@@ -47,6 +47,10 @@ def player_move(player):
     return guess
 
 
+def removing_spaces(string):
+    return string.replace(" ","")
+
+
 # def wheel_spin():
 #     option = random.choice(["CASH","LOSETURN","PRISON"])
 #     return option
