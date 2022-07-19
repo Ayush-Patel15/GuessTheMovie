@@ -20,15 +20,12 @@ class Player(object):
     def __str__(self) -> str:
         return "{0}, has ${1} /-".format(self.name, self.prize_money)
 
+
 class HumanPlayer(Player):
     
     def human_get_move(self):
         letter = input("Enter your guess: ").upper()
         return letter
-
-
-class ComputerPlayer(Player):
-    pass
 
 
 if __name__ == "__main__":
