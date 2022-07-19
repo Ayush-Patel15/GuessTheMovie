@@ -23,7 +23,7 @@ def movie_showboard(movie, guessed):
     ********************  GUESS  ********************\n
     {0}\n
     *************************************************
-    """.format(title)
+    """.format(title.replace("-",""))
 
 
 def number_of_players(min, max):
@@ -48,7 +48,7 @@ def player_move(player):
 
 
 def removing_spaces(string):
-    return string.replace(" ","")
+    return string.replace(" ","").replace("-","").replace("~","")
 
 
 # def wheel_spin():
@@ -64,3 +64,4 @@ if __name__ == "__main__":
     # print(player_move(obj))
     # print(wheel_spin())
     print(movie_showboard("BLACK PANTHER-2",["B","N","R"]))
+    # print(removing_spaces_n_symbols("~Z-O-M-B-I-E-S~"))

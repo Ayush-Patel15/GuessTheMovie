@@ -55,7 +55,7 @@ if type(num_of_human) is int:
                 print("Invalid Guess")
         
         else:
-            if guess == movie_name:
+            if removing_spaces(guess) == removing_spaces(movie_name):
                 winner = player
                 break
             else:
