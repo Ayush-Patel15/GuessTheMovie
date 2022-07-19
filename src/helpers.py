@@ -4,7 +4,7 @@ import random
 ALPHABETS = "BCDFGHJKLMNPQRSTVWXYZ"
 VOWELS = "AEIOU"
 INTEGERS = "0123456789"
-SYMBOLS = ["-","!","$","&",",",".","'",":","?"," "]
+SYMBOLS = ["-","!","$","&",",",".","'",":","?"," ","~"]
 
 def filling_movie_name(movie, guessed=[]):
     movie_name = ""
