@@ -51,9 +51,21 @@ def removing_spaces(string):
     return string.replace(" ","").replace("-","").replace("~","")
 
 
-# def wheel_spin():
-#     option = random.choice(["CASH","LOSETURN","PRISON"])
-#     return option
+def spin_wheel():
+    options_dict = [
+        {"CHANCE": "Won a 5D-4N tour of Mumbai-Pune."},
+        {"CHANCE": "Won a brand new Pulsar 150 Bike."},
+        {"CHANCE": "Won a cash prize of Rs.1,00,000."},
+        {"CHANCE": "Won a 1D free family tour of Imagica."},
+        {"CHANCE": "Nothing in hand! Just blessings.."},
+        {"CHANCE": "Nothing in hand! Just blessings.."},
+        {"CHANCE": "Nothing in hand! Just blessings.."},
+        {"PASS": "Chance has passed..!"},
+        {"PUNISHMENT": "Go to Jail..! Kidding..!"},
+        {"PUNISHMENT": "Pay Rs.2000 for your birthday party"}
+    ]
+    result = random.choice(options_dict)
+    return result
 
 if __name__ == "__main__":
     # "movie" should be in upper case letters.
@@ -62,6 +74,6 @@ if __name__ == "__main__":
     # print(number_of_players(0, 4))
     # obj = HumanPlayer("Ayush")
     # print(player_move(obj))
-    # print(wheel_spin())
+    # print(spin_wheel())
     print(movie_showboard("BLACK PANTHER-2",["B","N","R"]))
     # print(removing_spaces_n_symbols("~Z-O-M-B-I-E-S~"))
