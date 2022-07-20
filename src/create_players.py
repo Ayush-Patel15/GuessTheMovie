@@ -3,13 +3,13 @@
 class Player(object):
 
     def __init__(self,name) -> None:
-        self.name = name
+        self.name = name.upper()
         self.prize_money = 500
         self.prizes_lst = []
         self.prison_charge = 100
 
-    def add_prize_money(self, amount):
-        self.prize_money = self.prize_money + amount
+    def add_prize_money(self, count):
+        self.prize_money = self.prize_money + (50 * count)
 
     def add_prize_lst(self,prize):
         self.prizes_lst.append(prize)

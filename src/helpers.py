@@ -19,7 +19,7 @@ def filling_movie_name(movie, guessed=[]):
 
 def movie_showboard(movie, guessed):
     title = filling_movie_name(movie, guessed)
-    return """
+    return """\n
     ********************  GUESS  ********************\n
     {0}\n
     *************************************************
