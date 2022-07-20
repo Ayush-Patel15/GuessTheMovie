@@ -6,7 +6,7 @@ class Player(object):
         self.name = name.upper()
         self.prize_money = 500
         self.prizes_lst = []
-        self.prison_charge = 100
+        self.punishment_charge = 50
 
     def add_prize_money(self, count):
         self.prize_money = self.prize_money + (50 * count)
@@ -14,8 +14,8 @@ class Player(object):
     def add_prize_lst(self,prize):
         self.prizes_lst.append(prize)
 
-    def prison(self):
-        self.prize_money = self.prize_money - self.prison_charge
+    def punish_charge(self):
+        self.prize_money = self.prize_money - self.punishment_charge
 
     def __str__(self) -> str:
         return "{0}, has ${1} /-".format(self.name, self.prize_money)
