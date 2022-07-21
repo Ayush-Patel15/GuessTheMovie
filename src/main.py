@@ -40,9 +40,9 @@ if type(num_of_human) is int:
         elif chance == "PUNISHMENT":
             print("{0} got punishment. {1}".format(player.name, option["PUNISHMENT"]))
             player.punish_charge()
-        elif chance == "CASH":
-            print("{0} got CASH. {1}".format(player.name, option["CASH"]))
-            player.add_prize_lst(prize= option["CASH"])
+        elif chance == "CHANCE":
+            print("{0} got CHANCE. {1}".format(player.name, option["CHANCE"]))
+            player.add_prize_lst(prize= option["CHANCE"])
             guess = player.human_get_move()
             # print(guess)
 
