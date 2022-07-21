@@ -95,6 +95,7 @@ if type(num_of_human) is int:
         
         print("Now, {0}'s total prize money is Rs.{1}/-".format(player.name,player.prize_money))
         print(movie_showboard(movie=movie_name, guessed=guessed_letters))
+        print("\nGuessed letters are: ",guessed_letters)
 
         index = (index + 1) % len(human_players)
 
