@@ -1,11 +1,15 @@
+## Import Statements
 import random
 
+## Global Variables
 # VOWELS = ["A","E","I","O","U"]
 ALPHABETS = "BCDFGHJKLMNPQRSTVWXYZ"
 VOWELS = "AEIOU"
 INTEGERS = "0123456789"
 SYMBOLS = ["-","!","$","&",",",".","'",":","?"," ","~"]
 
+
+## Filling the _ _ movie_name with vowels and guessed letters
 def filling_movie_name(movie, guessed=[]):
     movie_name = ""
     for char in movie:
@@ -17,6 +21,7 @@ def filling_movie_name(movie, guessed=[]):
     return movie_name
 
 
+## The showboard to display the movie_name.
 def movie_showboard(movie, guessed):
     title = filling_movie_name(movie, guessed)
     return """\n
@@ -26,6 +31,7 @@ def movie_showboard(movie, guessed):
     """.format(title.replace("-",""))
 
 
+## Taking input for number of players
 def number_of_players(min, max):
     n = input("Number of Players: ")
     try:
@@ -42,15 +48,12 @@ def number_of_players(min, max):
     return output
 
 
-def player_move(player):
-    guess = player.human_get_move()
-    return guess
-
-
+## Removing the spaces, and special symbols to match the movie_name with guessed movie_title
 def removing_spaces(string):
     return string.replace(" ","").replace("-","").replace("~","")
 
 
+## A spin_wheel function to make the game interesting by adding additional rewards and punishments.
 def spin_wheel():
     options_dict = [
         {"CHANCE": "Won a 5D-4N tour of Mumbai-Pune."},
@@ -66,6 +69,7 @@ def spin_wheel():
     ]
     result = random.choice(options_dict)
     return result
+
 
 if __name__ == "__main__":
     # "movie" should be in upper case letters.

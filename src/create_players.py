@@ -1,13 +1,15 @@
-# Creatin a basic Player: with all common properties
+## A basic class Player: with all common properties like prize_money, prizes_lst etc.
 
 class Player(object):
 
+    # Initializor
     def __init__(self,name) -> None:
         self.name = name.upper()
         self.prize_money = 500
         self.prizes_lst = []
         self.punishment_charge = 50
 
+    # METHODS....
     def add_prize_money(self, count):
         self.prize_money = self.prize_money + (50 * count)
 
@@ -21,6 +23,7 @@ class Player(object):
         return "{0}, has ${1} /-".format(self.name, self.prize_money)
 
 
+## A HumanPlayer class to create human players
 class HumanPlayer(Player):
     
     def human_get_move(self):

@@ -1,9 +1,10 @@
-from helpers import filling_movie_name, movie_showboard, number_of_players, player_move, removing_spaces, spin_wheel, VOWELS, INTEGERS, SYMBOLS, ALPHABETS
+## Import Statements
+from helpers import filling_movie_name, movie_showboard, number_of_players, removing_spaces, spin_wheel, VOWELS, INTEGERS, SYMBOLS, ALPHABETS
 from get_movie import get_movie_name
 from create_players import HumanPlayer
 import time
 
-
+## GLobal variables
 movie_name = get_movie_name()
 # print(movie_name)
 index = 0
@@ -13,6 +14,7 @@ winner = False
 print("\n############# HUMAN PLAYERS  #############")
 num_of_human = number_of_players(0,4)
 
+## Prompting for number of players
 if type(num_of_human) is int:
     human_players = [HumanPlayer(input("Enter Name of player {0}: ".format(i+1))) for i in range(num_of_human)]
 
@@ -23,6 +25,8 @@ if type(num_of_human) is int:
 
     print(movie_showboard(movie=movie_name, guessed=guessed_letters))
 
+
+    ##########  ACTUAL LOGIC OF GAME    ##########
     while True:
         player = human_players[index]
         print("\n{0}'s turn..!".format(player.name))
@@ -30,6 +34,7 @@ if type(num_of_human) is int:
         option = spin_wheel()
         chance = list(option.keys())[0]
 
+        ## Checking for the chance
         if chance == "PASS":
             print("{0} got PASS. {1}".format(player.name, option["PASS"]))
         elif chance == "PUNISHMENT":
@@ -38,9 +43,10 @@ if type(num_of_human) is int:
         elif chance == "CASH":
             print("{0} got CASH. {1}".format(player.name, option["CASH"]))
             player.add_prize_lst(prize= option["CASH"])
-            guess = player_move(player)
+            guess = player.human_get_move()
             # print(guess)
 
+            ## Logic of taking the guess and checking
             if guess == "EXIT":
                 print("Thank You for your time {0}..! Please come back to GuessTheMovie.".format(player.name))
                 break
@@ -69,12 +75,14 @@ if type(num_of_human) is int:
                     print("{0}'s guesses {1}".format(player.name, guess))
                     print("Movie has {0} {1}.".format(count, guess))
 
+                    ## Checking for the whole guess as correct or not
                     movie_title = filling_movie_name(movie=movie_name,guessed=guessed_letters)
                     if removing_spaces(movie_title) == removing_spaces(movie_name):
                         winner = player
                         break
         
             else:
+                ## If the whole movie is guessed in once. Then, check:-
                 if removing_spaces(guess) == removing_spaces(movie_name):
                     winner = player
                     player.add_prize_money(count=len(removing_spaces(guess)))
@@ -88,7 +96,7 @@ if type(num_of_human) is int:
         index = (index + 1) % len(human_players)
 
 
-    ##### WINNER DECLARATION
+    ##########  WINNER DECLARATION  ##########
 
     if winner:
         print("\n\n{0} WINS..! Correct movie name was {1}.\nCongratulations..! Your winning prize amount is Rs.{2}/-.".format(winner.name, movie_name,winner.prize_money))
@@ -96,9 +104,7 @@ if type(num_of_human) is int:
         [print(prize) for prize in set(winner.prizes_lst)]
     else:
         print("NoBody Wins..! Movie name was {0}".format(movie_name))
+
+## If limit of players is either low or out of bound on higher side
 else:
     print(num_of_human)
-
-            
-if __name__ == "__main__":
-    pass
