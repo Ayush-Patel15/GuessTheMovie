@@ -5,8 +5,6 @@ from create_players import HumanPlayer
 import time
 
 ## GLobal variables
-movie_name = get_movie_name()
-# print(movie_name)
 index = 0
 guessed_letters = []
 winner = False
@@ -14,9 +12,14 @@ winner = False
 print("\n############# HUMAN PLAYERS  #############")
 num_of_human = number_of_players(0,4)
 
-## Prompting for number of players
+## Prompting for number of players and level of difficulty
 if type(num_of_human) is int:
     human_players = [HumanPlayer(input("Enter Name of player {0}: ".format(i+1))) for i in range(num_of_human)]
+    print("\n1 - EASY, 2 - MEDIUM, 3 - DIFFICULT")
+    difficulty = input("Level of Difficulty: ")
+
+    movie_name = get_movie_name(difficulty)
+    # print(movie_name)
 
     print("\n")
     print("=="*40)
