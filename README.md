@@ -5,7 +5,7 @@ A multiplayer movie-guessing game, which extracts random movie name from the res
 
 ## DESCRIPTION
 
-It uses `https://www.themoviedb.org/documentation/api` the api to extract a random movie_name on the basis of some parameters. Parameters used are - 
+It uses `https://www.themoviedb.org/documentation/api` the api to extract a random movie_name on the basis of some parameters. Register yourself on the website, and get an api_key. Parameters used are - 
 
 - language : en-IN
 - sort_by : popularity.desc
@@ -29,6 +29,8 @@ The project also consist some interesting features like additional prizes, spin_
 ```bash
 pip install -r requirements.txt
 ```
+
+- Get an api_key after registering to the above website, and place it in `get_movie.py` file under the "api_key" value.
 
 - You are ready to play. Run the `main.py` file from `src` to play.
 
