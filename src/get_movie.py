@@ -21,7 +21,7 @@ def get_movie_name(difficulty):
         page = 2
     BASE_URL = "https://api.themoviedb.org/3/discover/movie"
     params_dict = {
-        "api_key": "0b38bad1bae59363d6dd6fd8f82aa685",       # Your api_key
+        "api_key": os.environ.get("API_KEY"),       # Your api_key
         "language": "en-IN", 
         "sort_by": "popularity.desc",
         "primary_release_year": 2020,
