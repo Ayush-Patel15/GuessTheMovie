@@ -5,7 +5,7 @@ A multiplayer movie-guessing game, which extracts random movie name from the res
 
 ## DESCRIPTION
 
-It uses [https://www.themoviedb.org/documentation/api]([https://www.themoviedb.org/documentation/api) api to extract a random movie_name on the basis of some parameters. Parameters used are - 
+It uses [https://www.themoviedb.org/documentation/api](https://www.themoviedb.org/documentation/api) api to extract a random movie_name on the basis of some parameters. Parameters used are - 
 
 - api_key : your_api_key    (Required)
 - language : en-IN
