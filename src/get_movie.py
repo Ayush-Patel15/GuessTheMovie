@@ -11,11 +11,11 @@ load_dotenv()
 ## Function to render the movie_name from the rest api
 def get_movie_name(difficulty):
     if difficulty == "1":
-        page = 1
+        page = 2
     elif difficulty == "2":
-        page = 3
+        page = 6
     elif difficulty == "3":
-        page = 5
+        page = 10
     else:
         print("Invalid level..! Default to Easy")
         page = 2
@@ -23,8 +23,7 @@ def get_movie_name(difficulty):
     params_dict = {
         "api_key": os.environ.get("API_KEY"),       # Your api_key
         "language": "en-IN", 
-        "sort_by": "popularity.desc",
-        "primary_release_year": 2020,
+        "sort_by": "revenue.desc",
         "page": page
     }
     response = requests.get(BASE_URL, params=params_dict)

@@ -80,4 +80,4 @@ if __name__ == "__main__":
     # print(player_move(obj))
     # print(spin_wheel())
     print(movie_showboard("BLACK PANTHER-2",["B","N","R"]))
-    # print(removing_spaces_n_symbols("~Z-O-M-B-I-E-S~"))
+    # print(removing_spaces("~Z-O-M-B-I-E-S~"))
